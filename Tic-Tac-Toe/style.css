@@ -1,0 +1,152 @@
+@font-face {
+    font-family: domain;
+    src: url(./fonts/Domain.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "gilroy";
+    color: #000000;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+
+.page1{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background-color: #f0f4f8;
+}
+.center{
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 60%;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-image: url(images/a.jpg);
+      opacity: 85%;
+}
+.center h1{
+    font-size: 3vw;
+    margin: 1.5vw 0 3vw 0;
+    border-bottom: 1px dashed #000000;
+
+}
+.center .game-board{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(7vw,1fr));
+}
+.center .game-board .cell{
+    height:100px;
+    border: 2px solid #34495e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.6vw;
+    font-weight: 600;
+    font-size: 2.5vw;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    transition: background-color 0.3s;
+}
+.center .game-board .cell:hover{
+    background-color: #b2ebe0;
+}
+.center .game-board .cell:first-child,.center .game-board .cell:nth-child(2),.center .game-board .cell:nth-child(3){
+    border-top: none;
+}
+.center .game-board .cell:nth-child(3n){
+    border-right: none;
+}
+.center .game-board .cell:nth-child(3n+1){
+    border-left: none;
+}
+.center .game-board .cell:nth-child(n+7){
+    border-bottom: none;
+}
+.center .game-players{
+    display: flex;
+    gap: 2.5vw;
+    margin-top: 2.5vw;
+}
+.center .game-players .player{
+    font-size: 2vw;
+    font-weight: 700;
+}
+.center button{
+    font-size: 2vw;
+    margin-top: 2vw;
+    padding: 0.5vw 1vw;
+    color: white;
+    background-color: #000000;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    transition: transform 0.3s;
+}
+.center button:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.05);
+}
+.page1-top{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+.page1-bottom{
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    bottom: 0;
+    z-index: 9;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+.page1-top-h{
+       font-family: domain;
+       font-size: 18vw;
+       position: absolute;
+       bottom: -35%;
+       left: 7%;
+       color: #000000;
+}
+.page1-bottom-h{
+    font-family: domain;
+    font-size: 18vw;
+    position: absolute;
+    top: -50.8%;
+    left: 7%;
+    color: #000000;
+}
+.cell.disabled{
+    background-color: #95a5a6;
+}
+
+.alertBox{
+    position: absolute;
+    top: 0;
+    background-color: #000000;
+    color: #ffffff;
+    width: 100%;
+    padding: 13px 12px;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: "gilroy";
+    height: 80px;
+    display:none;
+    
+}
